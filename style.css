@@ -1,0 +1,23 @@
+body {
+	background: url(https://get.wallhere.com/photo/sunlight-flowers-nature-photography-green-blue-pollen-dandelion-flower-plant-eye-flora-petal-computer-wallpaper-land-plant-flowering-plant-close-up-macro-photography-plant-stem-daisy-family-5240.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+img
+{
+	max-width: 800px;
+	max-height: 800px;
+}
+.container {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid grey;
+	padding: 10px;
+	background: rgba(255, 255,255,.6);
+}
+h1 {
+	text-align: center;
+}
+.bold{
+	font-weight: bold;
+}

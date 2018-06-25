@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js_laba_1</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<h1>Встречи в Сан-Франциско</h1>
+	<script>
+		$.ajax({
+
+			url: 'https://api.meetup.com/find/upcoming_events?key=a2110687927f665f1924211591a46&end_date_range=2018-09-01T00:00:00&text=data%mining&radius=50&lon=-122.42&lat=37.78&page=200',
+			method: 'GET',
+			dataType: 'JSONP',
+			success: function(array) 
+			{
+				data = array.data.events;
+				console.log(data);
+				for (i = 0; i < data.length; i++) 
+				{
+					$('.container').append(
+						'<h2>'+ data[i].name +'</h2><br>' + 
+						'<p class="bold">' + data[i].local_date + ' в ' + data[i].local_time + '</p><br>' +
+						'<p class="bold">' + (data[i].venue == undefined ? 'имя не указано'
+						: data[i].venue.name) + '</p>' +
+						'<p class="bold">' + (data[i].venue == undefined ? 'адрес не указан'
+						: data[i].venue.address_1) + '</p><br>' +
+						'<p class="bold">' + data[i].description + '</p><br>'  
+
+						);
+				}
+			}
+
+		})
+	</script>
+<div class="container">
+	
+</div>
+</body>
+</html>
